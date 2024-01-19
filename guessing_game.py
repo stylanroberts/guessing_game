@@ -4,12 +4,12 @@ Project 1 - The Number Guessing Game
 --------------------------------
 """
 
-tries = 0
 
 # Import the random module.
 import random
 # Create the start_game function.
 def start_game():
+    tries = 0
 # Write your code inside this function.
 
 #   When the program starts, we want to:
@@ -21,23 +21,27 @@ def start_game():
 #   3. Continuously prompt the player for a guess.
     while True:
         try:
-            their_number = int(input("Pick a number between 1-10:    "))
+            their_number = int(input("\nPick a number between 1-10:    "))
+            tries += 1
             break
 
 
         except ValueError:
             print("I need a number between 1 and 10 please.")
     while True:
+
         if their_number > random_number:
-            their_number = int(input("The number is lower, try again!"))
+            their_number = int(input("\nThe number is lower, try again!\nPick another number 1-10:   "))
             tries += 1
         if their_number < random_number:
-            their_number = int(input("The number is higher, try again!"))
+            their_number = int(input("\nThe number is higher, try again!\nPick another number 1-10:   "))
             tries += 1
         else:
-            print(f"You got it! The number was {random_number}! You got it in {tries} guesses!")
+            print(f"\nYou got it! The number was {random_number}! You got it in {tries} attempts!")
+            print("\nTHANKS FOR PLAYING! :)\n")
+            break
 
-
+start_game()
 #     a. If the guess is greater than the solution, display to the player "It's lower".
 #     b. If the guess is less than the solution, display to the player "It's higher".
 
