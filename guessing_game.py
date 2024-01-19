@@ -22,24 +22,44 @@ def start_game():
     while True:
         try:
             their_number = int(input("\nPick a number between 1-10:    "))
-            tries += 1
-            break
+            if their_number < 1 or their_number > 10:
+                print("\nThat number is out of range. Pick a number between 1-10.")
 
-
+            else:
+                tries += 1
+                break
+        
         except ValueError:
             print("I need a number between 1 and 10 please.")
+        
+
+
+
     while True:
+
+
+
+
 
         if their_number > random_number:
             their_number = int(input("\nThe number is lower, try again!\nPick another number 1-10:   "))
             tries += 1
+
         if their_number < random_number:
             their_number = int(input("\nThe number is higher, try again!\nPick another number 1-10:   "))
             tries += 1
+
         else:
             print(f"\nYou got it! The number was {random_number}! You got it in {tries} attempts!")
-            print("\nTHANKS FOR PLAYING! :)\n")
-            break
+
+
+            play_again = input("Do you want to play again? y/n  ")
+                               
+            if play_again.lower() == 'y':
+                start_game()
+            else:
+                print("\nTHANKS FOR PLAYING! :)\n")
+                break
 
 start_game()
 #     a. If the guess is greater than the solution, display to the player "It's lower".
