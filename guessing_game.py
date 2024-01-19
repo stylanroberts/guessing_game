@@ -4,6 +4,8 @@ Project 1 - The Number Guessing Game
 --------------------------------
 """
 
+tries = 0
+
 # Import the random module.
 import random
 # Create the start_game function.
@@ -25,7 +27,16 @@ def start_game():
 
         except ValueError:
             print("I need a number between 1 and 10 please.")
-asdfasdfdasfadsf
+    while True:
+        if their_number > random_number:
+            their_number = int(input("The number is lower, try again!"))
+            tries += 1
+        if their_number < random_number:
+            their_number = int(input("The number is higher, try again!"))
+            tries += 1
+        else:
+            print(f"You got it! The number was {random_number}! You got it in {tries} guesses!")
+
 
 #     a. If the guess is greater than the solution, display to the player "It's lower".
 #     b. If the guess is less than the solution, display to the player "It's higher".
