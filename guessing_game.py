@@ -8,18 +8,30 @@ Project 1 - The Number Guessing Game
 # Import the random module.
 import random
 # Create the start_game function.
+
+
+
+
 def start_game():
-    tries = 0
+
+    
 # Write your code inside this function.
 
 #   When the program starts, we want to:
 #   ------------------------------------
 #   1. Display an intro/welcome message to the player.
     print("---WELCOME TO THE GUESS YOUR NUMBER GAME---")
+
+
 #   2. Store a random number as the answer/solution.
     random_number = random.randint(1,10)
 #   3. Continuously prompt the player for a guess.
     while True:
+        tries = 0
+
+        # if high_score != 0:
+            #print(f"THE CURRENT HIGH SCORE IS {high_score} TRIES!")
+
         try:
             their_number = int(input("\nPick a number between 1-10:    "))
             if their_number < 1 or their_number > 10:
@@ -52,14 +64,23 @@ def start_game():
         else:
             print(f"\nYou got it! The number was {random_number}! You got it in {tries} attempts!")
 
+            high_score = tries
+            if tries < high_score:
+                high_score = tries
+            # if tries < high_score:
+            #     high_score = tries
+            print(f"The high score is {high_score}!")
+
 
             play_again = input("Do you want to play again? y/n  ")
                                
             if play_again.lower() == 'y':
                 start_game()
+                
             else:
                 print("\nTHANKS FOR PLAYING! :)\n")
                 break
+
 
 start_game()
 #     a. If the guess is greater than the solution, display to the player "It's lower".
