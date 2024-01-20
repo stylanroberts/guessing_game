@@ -27,10 +27,8 @@ def start_game():
     random_number = random.randint(1,10)
 #   3. Continuously prompt the player for a guess.
     while True:
-        tries = 0
 
-        # if high_score != 0:
-            #print(f"THE CURRENT HIGH SCORE IS {high_score} TRIES!")
+        tries = 0
 
         try:
             their_number = int(input("\nPick a number between 1-10:    "))
@@ -57,7 +55,7 @@ def start_game():
             their_number = int(input("\nThe number is lower, try again!\nPick another number 1-10:   "))
             tries += 1
 
-        if their_number < random_number:
+        elif their_number < random_number:
             their_number = int(input("\nThe number is higher, try again!\nPick another number 1-10:   "))
             tries += 1
 
@@ -67,16 +65,15 @@ def start_game():
             high_score = tries
             if tries < high_score:
                 high_score = tries
-            # if tries < high_score:
-            #     high_score = tries
-
-
 
             play_again = input("Do you want to play again? y/n  ")
-                               
+
+
+                                
             if play_again.lower() == 'y':
-                print(f"The high score is {high_score}!")
+                print(f"\nThe high score is {high_score}!\n")
                 start_game()
+                break
                 
             else:
                 print("\nTHANKS FOR PLAYING! :)\n")
