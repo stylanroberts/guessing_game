@@ -28,6 +28,7 @@ def start_game():
 #   3. Continuously prompt the player for a guess.
     while True:
 
+
         tries = 0
 
         try:
@@ -44,11 +45,7 @@ def start_game():
         
 
 
-
     while True:
-
-
-
 
 
         if their_number > random_number:
@@ -65,9 +62,9 @@ def start_game():
             high_score = tries
             if tries < high_score:
                 high_score = tries
+                
 
             play_again = input("Do you want to play again? y/n  ")
-
 
                                 
             if play_again.lower() == 'y':
