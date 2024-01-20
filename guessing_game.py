@@ -69,12 +69,13 @@ def start_game():
                 high_score = tries
             # if tries < high_score:
             #     high_score = tries
-            print(f"The high score is {high_score}!")
+
 
 
             play_again = input("Do you want to play again? y/n  ")
                                
             if play_again.lower() == 'y':
+                print(f"The high score is {high_score}!")
                 start_game()
                 
             else:
