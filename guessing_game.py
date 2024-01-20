@@ -11,8 +11,8 @@ import random
 
 
 
-
 def start_game():
+
 
     
 # Write your code inside this function.
@@ -59,10 +59,16 @@ def start_game():
         else:
             print(f"\nYou got it! The number was {random_number}! You got it in {tries} attempts!")
 
-            high_score = tries
-            if tries < high_score:
+            # high_score = tries
+
+            high_score = 
+
+        # IF IT TOOK LESS TRIES THAN THE ATTEMPT WITH THE LEAST, SHOW THAT AS HIGH SCORE
+            if high_score == 0:
                 high_score = tries
-                
+            elif tries < high_score:
+                high_score = tries
+
 
             play_again = input("Do you want to play again? y/n  ")
 
