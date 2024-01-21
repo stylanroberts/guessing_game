@@ -9,10 +9,11 @@ Project 1 - The Number Guessing Game
 import random
 # Create the start_game function.
 
-
+MIN_VALUE = 0
+MAX_VALUE = 10
+high_score = MAX_VALUE
 
 def start_game():
-
 
     
 # Write your code inside this function.
@@ -24,12 +25,13 @@ def start_game():
 
 
 #   2. Store a random number as the answer/solution.
-    random_number = random.randint(1,10)
+    random_number = random.randint(MIN_VALUE,MAX_VALUE)
 #   3. Continuously prompt the player for a guess.
     while True:
 
 
         tries = 0
+        
 
         try:
             their_number = int(input("\nPick a number between 1-10:    "))
@@ -61,14 +63,21 @@ def start_game():
 
             # high_score = tries
 
-            high_score = 
+            # last_attempt
 
         # IF IT TOOK LESS TRIES THAN THE ATTEMPT WITH THE LEAST, SHOW THAT AS HIGH SCORE
-            if high_score == 0:
-                high_score = tries
-            elif tries < high_score:
-                high_score = tries
+            # if high_score == 0:
+            #     high_score = tries
+            # elif tries < high_score:
+            #     high_score = tries
 
+            # if high_score == 0:
+            #      high_score = tries
+
+            global high_score
+            
+            if tries < high_score:
+                high_score = tries
 
             play_again = input("Do you want to play again? y/n  ")
 
