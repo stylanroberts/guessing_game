@@ -9,11 +9,13 @@ Project 1 - The Number Guessing Game
 import random
 # Create the start_game function.
 
-MIN_VALUE = 0
+tries = 0
+MIN_VALUE = 1
 MAX_VALUE = 10
 high_score = MAX_VALUE
 
 def start_game():
+    
 
     
 # Write your code inside this function.
@@ -29,69 +31,48 @@ def start_game():
 #   3. Continuously prompt the player for a guess.
     while True:
 
-
-        tries = 0
-        
-
         try:
+            global tries
             their_number = int(input("\nPick a number between 1-10:    "))
+
             if their_number < 1 or their_number > 10:
-                print("\nThat number is out of range. Pick a number between 1-10.")
+                print("\nThat number is out of range.")
 
-            else:
+            elif their_number > random_number:
+                print("\nThe number is lower, try again!")
+
                 tries += 1
-                break
-        
-        except ValueError:
-            print("I need a number between 1 and 10 please.")
-        
 
-
-    while True:
-
-
-        if their_number > random_number:
-            their_number = int(input("\nThe number is lower, try again!\nPick another number 1-10:   "))
-            tries += 1
-
-        elif their_number < random_number:
-            their_number = int(input("\nThe number is higher, try again!\nPick another number 1-10:   "))
-            tries += 1
-
-        else:
-            print(f"\nYou got it! The number was {random_number}! You got it in {tries} attempts!")
-
-            # high_score = tries
-
-            # last_attempt
-
-        # IF IT TOOK LESS TRIES THAN THE ATTEMPT WITH THE LEAST, SHOW THAT AS HIGH SCORE
-            # if high_score == 0:
-            #     high_score = tries
-            # elif tries < high_score:
-            #     high_score = tries
-
-            # if high_score == 0:
-            #      high_score = tries
-
-            global high_score
+            elif their_number < random_number:
+                print("\nThe number is higher, try again!")
+                tries += 1
             
-            if tries < high_score:
-                high_score = tries
+            else:
+                print(f"\nYou got it! The number was {random_number}! You got it in {tries} attempts!")
 
-            play_again = input("Do you want to play again? y/n  ")
+
+                global high_score
+            
+                if tries < high_score:
+                    high_score = tries
+
+
+                play_again = input("Do you want to play again? y/n  ")
 
                                 
-            if play_again.lower() == 'y':
-                print(f"\nThe high score is {high_score}!\n")
-                start_game()
-                break
+                if play_again.lower() == 'y':
+                    print(f"\nThe high score is {high_score}!\n")
+                    tries = 0
+                    start_game()
+                    break
                 
-            else:
-                print("\nTHANKS FOR PLAYING! :)\n")
-                break
+                else:
+                    print("\nTHANKS FOR PLAYING! :)\n")
+                    break
 
-
+        except ValueError:
+            print("I need a number.")
+        
 start_game()
 #     a. If the guess is greater than the solution, display to the player "It's lower".
 #     b. If the guess is less than the solution, display to the player "It's higher".
