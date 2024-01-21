@@ -15,16 +15,11 @@ Project 1 - The Number Guessing Game
 #   3. Continuously prompt the player for a guess.
 #     a. If the guess is greater than the solution, display to the player "It's lower".
 #     b. If the guess is less than the solution, display to the player "It's higher".
-
 #   4. Once the guess is correct, stop looping, inform the user they "Got it"
 #      and show how many attempts it took them to get the correct number.
 #   5. Let the player know the game is ending, or something that indicates the game is over.
-
 # ( You can add more features/enhancements if you'd like to. )
-
-
 # Kick off the program by calling the start_game function.
-
 
 import random
 
@@ -56,7 +51,6 @@ def start_game():
         try:
             their_number = int(input(f"\nPick a number between {MIN_VALUE} and {MAX_VALUE}:    "))
 
-
             # Provide Correct Feedback
             if their_number < MIN_VALUE or their_number > MAX_VALUE:
                 print("\nThat number is out of range.")
@@ -78,7 +72,6 @@ def start_game():
                     high_score_name = name
                     high_score = tries
 
-
                 play_again = input("Do you want to play again? y/n  ")
                
                 # Play again prompt
@@ -86,7 +79,6 @@ def start_game():
                     tries = 1
                     start_game()
                     break
-
                 else:
                     # Provide a Goodbye Message
                     print("\nTHANKS FOR PLAYING! :)\n")
