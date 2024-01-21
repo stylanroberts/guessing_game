@@ -1,2 +1,2 @@
 # guessing_game
- Guessing game project
+ hi I am shooting for exceeds expectations. I added everything in the list plus a couple other goodies, hope you like thank you!
