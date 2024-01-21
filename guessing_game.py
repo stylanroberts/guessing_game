@@ -36,8 +36,7 @@ high_score_name = 'PYGUY'
 
 def start_game():
     
-    global high_score_name
-    global high_score
+    global high_score, high_score_name, tries
 
     # Provide a Welcome Message
     print("\n---WELCOME TO THE GUESS YOUR NUMBER GAME---")
@@ -55,7 +54,6 @@ def start_game():
     while True:
 
         try:
-            global tries
             their_number = int(input(f"\nPick a number between {MIN_VALUE} and {MAX_VALUE}:    "))
 
 
